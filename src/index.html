@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html  class="h-100">
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+
+  <body class="bg-light h-100">
+    <div id="vue" class="h-100">
+
+      <div class="container h-100" id="graph-header">
+        <h1 class="text-center">GraphQL Templater</h1>
+
+          <div class="container h-100" >
+
+            <graphqlbuilder class="row h-50" v-on:result_updated="update_result"></graphqlbuilder>
+
+            <div class="row h-50 justify-content-center">
+              <div class="col-6 h-100 ">
+                <textarea class="h-100 w-100" v-model="template_code"></textarea>
+              </div>
+              <div class="col-6">
+                <button class="btn btn-primary" v-on:click="update_template()">Update template</button>
+                <div class="well" style="overflow:scroll;">
+                  <liveupdater v-bind:template-code="template_code" v-bind:data-code="graphqlresult"></liveupdater>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+
+</html>
